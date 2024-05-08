@@ -1,10 +1,16 @@
 Vftable data type definition from selection Ghidra extension.
 
-### Build
+### Build (Linux)
 
 ```bash
 $ export GHIDRA_INSTALL_DIR=<ghidra-dir>
 $ gradle buildExtension
+```
+
+### Build (Windows)
+
+```
+> gradle -PGHIDRA_INSTALL_DIR="<ghidra-dir" buildExtension
 ```
 
 ### Install

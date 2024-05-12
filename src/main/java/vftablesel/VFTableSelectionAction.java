@@ -95,10 +95,13 @@ public class VFTableSelectionAction extends ListingContextAction {
 			if(f == null) {
 				pfdd = new PointerDataType(dtMgr);
 			} else {
-				fdd = new FunctionDefinitionDataType(f, false);
+				String funcName = f.getParentNamespace() != null ? f.getParentNamespace().getName() + "::" + f.getName() : f.getName();
+
+				Msg.info(this, "Creating function definition: " + funcName);
+
+				fdd = new FunctionDefinitionDataType(vfctCat.getCategoryPath(), funcName, f.getSignature());
 				pfdd = new PointerDataType(fdd);
 				try {
-					fdd.setCategoryPath(vfctCat.getCategoryPath());
 					dtMgr.addDataType(fdd, DataTypeConflictHandler.REPLACE_HANDLER);
 	
 					pfdd.setCategoryPath(vfctCat.getCategoryPath());
@@ -113,6 +116,9 @@ public class VFTableSelectionAction extends ListingContextAction {
 
 			vtableStruct.add(pfdd, ptr_size, fname, fcomm);
 		}
+
+		Msg.info(this, "Creating vtable: " + vtableStruct.getName());
+
 		dtMgr.addDataType(vtableStruct, DataTypeConflictHandler.REPLACE_HANDLER);
 		dtMgr.endTransaction(tid, true);
 	}

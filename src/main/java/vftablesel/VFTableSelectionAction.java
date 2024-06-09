@@ -1,3 +1,5 @@
+package vftablesel;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -110,7 +112,8 @@ public class VFTableSelectionAction extends ListingContextAction {
 					// do nothing
 				}
 
-				fname = fdd.getName();
+				String[] fnames = fdd.getName().split("::");
+				fname = fnames[fnames.length-1];
 				fcomm = f.getEntryPoint().toString();
 			}
 

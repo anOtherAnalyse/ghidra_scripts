@@ -1,11 +1,11 @@
+package vftablesel;
+
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
-
-import org.w3c.dom.events.MouseEvent;
 
 import docking.ReusableDialogComponentProvider;
 import ghidra.framework.plugintool.PluginTool;

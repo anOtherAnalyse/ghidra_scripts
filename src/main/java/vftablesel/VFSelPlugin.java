@@ -1,3 +1,5 @@
+package vftablesel;
+
 import ghidra.MiscellaneousPluginPackage;
 import ghidra.app.plugin.PluginCategoryNames;
 import ghidra.framework.plugintool.Plugin;
@@ -8,7 +10,7 @@ import ghidra.framework.plugintool.util.PluginStatus;
 @PluginInfo(
 	status = PluginStatus.STABLE,
 	packageName = MiscellaneousPluginPackage.NAME,
-	category = PluginCategoryNames.MISC,
+	category = PluginCategoryNames.ANALYSIS,
 	shortDescription = "vftable reconstruction.",
 	description = "Virtual table selection & reconstruction."
 )
